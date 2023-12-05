@@ -1,9 +1,9 @@
 spring:
   datasource:
     hikari:
-      # 외부 클라이언트에서는 jdbc:h2:tcp://localhost:9092/./h2db/security-study 로 접근한다.
+      # 외부 클라이언트에서는 jdbc:h2:tcp://localhost:9092/./h2db/authentication 로 접근한다.
       driver-class-name: org.h2.Driver
-      jdbc-url: jdbc:h2:file:./h2db/security-study;MODE=MYSQL;DATABASE_TO_LOWER=TRUE
+      jdbc-url: jdbc:h2:file:./h2db/authentication;MODE=MYSQL;DATABASE_TO_LOWER=TRUE
       username: sa
       minimum-idle: 1
       maximum-pool-size: 5
