@@ -1,8 +1,2 @@
-spring:
-  cloud:
-    gateway:
-      routes:
-        - id: api_server
-          uri: http://localhost:8081
-        - id: queue_server
-          uri: http://localhost:9999
+info:
+  name: authenticate-server-haha
