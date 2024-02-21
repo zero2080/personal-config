@@ -1,2 +1,10 @@
 info:
   name: authenticate-server-haha
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: api_server
+          uri: http://api:8081
+        - id: queue_server
+          uri: http://message:9999

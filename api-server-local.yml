@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/devple?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&useLegacyDatetimeCode=false
+    hikari:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: devple
+      password: 5ca51b52-9437-11ee-a5a1-0242ac170002
+      maximum-pool-size: 10
+      minimum-idle: 5
+      initialization-fail-timeout: 20000
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    defer-datasource-initialization: true
