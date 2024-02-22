@@ -4,5 +4,9 @@ spring:
       routes:
         - id: api_server
           uri: http://localhost:8081
+          predicates:
+            - Path=/api/**
         - id: queue_server
           uri: http://localhost:9999
+          predicates:
+            - Path=/message/**
