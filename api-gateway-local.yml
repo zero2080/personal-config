@@ -5,26 +5,23 @@ spring:
         - uri: lb://api
           predicates:
             - Path=/api/**
-          filters:
-            - StripPrefix=1
-            - LoadBalancer=localhost:8081;localhost:8082
 #        - uri: http://localhost:9999
 #          predicates:
 #            - Path=/message
     loadbalancer:
       configurations: health-check
-#    discovery:
-#      client:
-#        simple: # SimpleDiscoveryClient to configure statically services
-#          instances:
-#            api:
-#              - secure: false
-#                port: 8081
-#                host: localhost
-#                serviceId: api
-#                instanceId: api-1
-#              - secure: false
-#                port: 8082
-#                host: localhost
-#                serviceId: api
-#                instanceId: api-2
+    discovery:
+      client:
+        simple: # SimpleDiscoveryClient to configure statically services
+          instances:
+            api:
+              - secure: false
+                port: 8081
+                host: localhost
+                serviceId: api
+                instanceId: api-1
+              - secure: false
+                port: 8082
+                host: localhost
+                serviceId: api
+                instanceId: api-2
