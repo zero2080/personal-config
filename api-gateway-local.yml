@@ -2,11 +2,26 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: api_server
-          uri: http://localhost:8081
+        - uri: lb://api
           predicates:
-            - Path=/api/**
-        - id: queue_server
-          uri: http://localhost:9999
-          predicates:
-            - Path=/message/**
+            - Path=/api
+#        - uri: http://localhost:9999
+#          predicates:
+#            - Path=/message
+    loadbalancer:
+      configurations: health-check
+    discovery:
+      client:
+        simple: # SimpleDiscoveryClient to configure statically services
+          instances:
+            api:
+              - secure: false
+                port: 8081
+                host: localhost
+                serviceId: api
+                instanceId: api-1
+              - secure: false
+                port: 8082
+                host: localhost
+                serviceId: api
+                instanceId: api-2
