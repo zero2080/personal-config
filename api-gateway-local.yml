@@ -4,7 +4,7 @@ spring:
       routes:
         - uri: lb://api
           predicates:
-            - Path=/api
+            - Path=/api/**
 #        - uri: http://localhost:9999
 #          predicates:
 #            - Path=/message
